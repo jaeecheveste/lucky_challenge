@@ -1,0 +1,14 @@
+http:
+  host: 'localhost'
+  port: 3000
+
+db:
+  postgres:
+    host: localhost
+    port: 5432
+    username: postgres
+    password: s3cr3t
+    database: lucky_challenge
+    run_migrations: true
+    name: default
+mode: DEV

@@ -1,7 +1,12 @@
 http:
   host: 'localhost'
   port: 3000
-
+jwt:
+  secret: s3cr3t
+  expires: '3600S'
+redis:
+  url: redis://localhost:6379
+  ttl_seconds: 60
 db:
   postgres:
     host: localhost

@@ -2,3 +2,4 @@ node_modules/
 dist/
 src/config/env-prod.yaml
 src/config/env-staging.yaml
+.vscode/

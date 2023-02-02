@@ -8,6 +8,7 @@
 ```
 ## Installation
 ```bash
+Add environment variables to src/config/env-production.yaml (Sent by email)
 Run bash to initialize containers and start server API
 $ ./start.sh
 

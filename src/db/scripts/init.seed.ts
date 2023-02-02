@@ -35,7 +35,7 @@ async function run() {
     `);
 
     await startedConnection.query(`
-      INSERT into city (id, name) values 
+      INSERT into city (id, name, country_id) values 
         (1, 'Rosario', 1), 
         (2, 'Buenos Aires', 1), 
         (3, 'Montevideo', 2);

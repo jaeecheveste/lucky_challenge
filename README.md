@@ -15,30 +15,40 @@ This will install:
 -Database
 -Redis
 -API
+-Migrations
 ```
+## Configuration
+Depending on the environment , you can place config files inside src/config
 
 ## Documentation
 ```bash
 In order to test API , please follow the DOC located in:
 http://localhost:3000/api
+
+
+PROJECT STRUCTURE:
+
+AUTH MODULE
+All related to authentication
+USERS MODULE:
+All related to users
+REPOSITORY MODULE:
+The idea is to keep separate TypeOrm implementation inside Repository Module. In order to reduce coupling. 
+CACHING MODULE:
+This module provides a caching service with Redis decoupled implementation
 ```
 
 ## Running the app locally
 ```bash
-# development
 $ npm install
 $ npm run start
 
 ```
 
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
 ## Stay in touch
 
 - Author - Ezequiel Echeveste
+- Email - jae.echeveste@gmail.com
 - Website - [https://nestjs.com](https://nestjs.com/)
 
 ## License

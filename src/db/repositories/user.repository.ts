@@ -1,5 +1,3 @@
-// item.service.ts 
-
 import { Injectable } from '@nestjs/common';
 import { InjectDataSource, InjectRepository } from '@nestjs/typeorm';
 import { UserEntity } from 'src/db/entities/user.entity';

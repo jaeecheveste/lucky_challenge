@@ -19,6 +19,6 @@ db:
     database: lucky_challenge
     run_migrations: true
     name: default
-    entities: 'dist/db/entities/*.entity{.ts,.js}'
-    migrations: 'dist/db/migrations/*{.ts,.js}'
+    entities: 'src/db/entities/*.entity{.ts,.js}'
+    migrations: 'src/db/migrations/*{.ts,.js}'
 mode: DEV

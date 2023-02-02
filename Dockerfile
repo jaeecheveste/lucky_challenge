@@ -38,10 +38,7 @@ COPY --chown=node:node . .
 # Run the build command which creates the production bundle
 ENV NODE_ENV production
 
-RUN npm run build && npm run migration:up && npm run start:db:seed
-
-# Set NODE_ENV environment variable
-ENV NODE_ENV production
+RUN npm run build
 
 # Running `npm ci` removes the existing node_modules directory and passing in --only=production ensures that only the production dependencies are installed. This ensures that the node_modules directory is as optimized as possible
 RUN npm ci --only=production && npm cache clean --force
@@ -57,6 +54,8 @@ FROM node:14-alpine As production
 # Copy the bundled code from the build stage to the production image
 COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
+
+ENV NODE_ENV production
 
 # Start the server using the production build
 CMD [ "node", "dist/main.js" ]

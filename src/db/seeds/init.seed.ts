@@ -39,8 +39,6 @@ async function run() {
         console.log("Error running seed", err);
       }
     });
-
-    process.exit(1);
   } catch (err) {
     console.log("Error running seed", err);
   }

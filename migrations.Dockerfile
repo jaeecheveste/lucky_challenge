@@ -22,4 +22,4 @@ USER node
 
 ENV NODE_ENV production
 
-CMD npm run migration:up && npm run start:db:seed
+CMD npm run migration:up

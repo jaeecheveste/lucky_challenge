@@ -40,6 +40,8 @@ async function run() {
         (2, 'Buenos Aires', 1), 
         (3, 'Montevideo', 2);
     `);
+    console.log("Running seed succeed");
+
   } catch(err) {
     console.log("error running seed");
   }

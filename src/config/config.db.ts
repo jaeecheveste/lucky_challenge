@@ -1,5 +1,3 @@
-import { join } from "path"
-
 export interface ConfigDB {
   type: string,
   host: string,
@@ -7,7 +5,8 @@ export interface ConfigDB {
   username: string,
   password: string,
   database: string,
-  entities: string[],
+  entities: string,
+  migrations: string,
   migrationsTableName: string,
   cli: {
     migrationsDir: string
@@ -25,9 +24,9 @@ export default (configDB: ConfigDB) => ({
     username: configDB.username,
     password: configDB.password,
     database: configDB.database,
-    entities: process.env.NODE_ENV === 'local' ? ['src/**/*.entity{.ts,.js}'] : ["dist/db/entities/*.entity{.ts,.js}"],
+    entities: [configDB.entities],
     migrationsTableName: 'migration',
-    migrations: ["dist/db/migrations/*{.ts,.js}"],
+    migrations: [configDB.migrations],
     cli: {
       migrationsDir: 'src/db/migrations',
     },

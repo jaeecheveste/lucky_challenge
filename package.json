@@ -14,7 +14,7 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "start:dev:db": "./src/db/scripts/start-db.sh",
-    "start:dev:db:seed": "NODE_ENV=local ts-node -r tsconfig-paths/register src/db/seeds/init.seed.ts",
+    "start:db:seed": "NODE_ENV=production && ts-node -r tsconfig-paths/register dist/db/seeds/init.seed.js",
     "migration:create": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:create",
     "migration:generate": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:generate -d src/config/config.orm.ts",
     "migration:up": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:run -d src/config/config.orm.ts",

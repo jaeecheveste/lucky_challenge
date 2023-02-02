@@ -10,7 +10,7 @@ export class LoggerMiddleware implements NestMiddleware {
       originalUrl: req.originalUrl,
     });
 
-    this.getResponseLog(res);
+    //this.getResponseLog(res);
 
     if (next) {
       next();
@@ -49,7 +49,7 @@ export class LoggerMiddleware implements NestMiddleware {
        const responseLog = {
         response: {
           statusCode: res.statusCode,
-          body: JSON.parse(body) || body || {},
+          body: this.parseBody(body) || body || {},
           headers: res.getHeaders(),
         },
       };
@@ -58,4 +58,14 @@ export class LoggerMiddleware implements NestMiddleware {
       return responseLog as unknown as Response;
     };
   };
+
+  parseBody(body) {
+    try {
+      return JSON.parse(body);
+    } catch(ex) {
+      return {
+        message: body
+      }
+    }
+  }
 }

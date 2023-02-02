@@ -7,7 +7,9 @@ services:
     image: postgres:15.1-alpine
     restart: always
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: s3cr3t
+      POSTGRES_DB: lucky_challenge
     ports:
       - 5432:5432
   lucky_api:

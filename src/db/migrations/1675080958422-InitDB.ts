@@ -59,8 +59,6 @@ export class InitDB1675080958422 implements MigrationInterface {
                         REFERENCES "user" (id)
                 );`
         );
-
-        await queryRunner.query(`CREATE UNIQUE INDEX "IDX_user_username" ON "user"."username"`);
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {

@@ -14,7 +14,7 @@ export class UsersController {
   @ApiOperation({ summary: 'Creates a new user with profile' })
   @ApiOkResponse({
     description: 'User profile created successfully.',
-    type: [String],
+    type: String,
   })
     async createUserProfile(
         @Body() body: UserProfileModel,
@@ -29,7 +29,7 @@ export class UsersController {
   @ApiOperation({ summary: 'Retrieves an user profile' })
   @ApiOkResponse({
     description: 'User profile retrieved successfully.',
-    type: [UserProfileRespModel],
+    type: UserProfileRespModel,
   })
     async getProfile(@Request() req): Promise<UserProfileRespModel> {
       const { username } = req.user;

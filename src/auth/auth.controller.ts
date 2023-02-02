@@ -3,6 +3,8 @@ import { AuthService } from './auth.service';
 import { LocalAuthGuard } from './local.auth.guard';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { LoginModel, LoginRespModel } from './auth.models';
+import { ValidationBodyPipe } from 'src/common/decorators/validation.pipe';
+import { LoginSchema } from './auth.schema';
 
 @ApiTags('Authentication')
 @Controller()
@@ -16,7 +18,7 @@ export class AuthController {
       type: LoginRespModel,
     })
     @Post('auth/login')
-    async login(@Body() body: LoginModel,
+    async login(@Body(new ValidationBodyPipe(LoginSchema)) body: LoginModel,
     ): Promise<LoginRespModel> {
       return this.authService.login(body);
     }

@@ -1,6 +1,6 @@
 
 import { Body, Controller, Get, Post, UseGuards, Request } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/jwt.auth.guard';
 import { UserProfileModel, UserProfileRespModel } from './users.profile.model';
 import { UsersService } from './users.service';
@@ -25,6 +25,7 @@ export class UsersController {
     }
 
   @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @Get('/profile')
   @ApiOperation({ summary: 'Retrieves an user profile' })
   @ApiOkResponse({

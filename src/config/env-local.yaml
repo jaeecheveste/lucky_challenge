@@ -5,11 +5,11 @@ jwt:
   secret: s3cr3t
   expires: '3600S'
 redis:
-  url: redis://lucky_redis:6379
+  url: redis://localhost:6379
   ttl_seconds: 60
 db:
   postgres:
-    host: host.docker.internal
+    host: localhost
     port: 5432
     username: postgres
     password: s3cr3t

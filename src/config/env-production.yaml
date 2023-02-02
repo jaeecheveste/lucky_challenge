@@ -6,10 +6,10 @@ jwt:
   expires: '3600S'
 redis:
   url: redis://lucky_redis:6379
-  ttl_seconds: 60
+  ttl_seconds: 600
 db:
   postgres:
-    host: host.docker.internal
+    host: lucky_db
     port: 5432
     username: postgres
     password: s3cr3t
@@ -18,4 +18,4 @@ db:
     name: default
     entities: 'dist/db/entities/*.entity{.ts,.js}'
     migrations: 'dist/db/migrations/*{.ts,.js}'
-mode: DEV
+mode: PRODUCTION

@@ -8,6 +8,8 @@ async function bootstrap() {
 
   //Document API
   const options = new DocumentBuilder()
+    .addBearerAuth()
+    .addTag('Authentication')
     .setTitle('Lucky Challenge')
     .setDescription('This is an API for Lucky Challenge')
     .setVersion('1.0')

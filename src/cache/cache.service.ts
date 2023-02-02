@@ -17,4 +17,12 @@ export class CacheService {
   public async invalidate(key: string) {
     return await this.redisAsCache.del(key);
   }
+
+  public async executeCacheFn(fn: Function): Promise<any> {
+    try {
+      return await fn()
+    } catch {
+      return null;
+    }
+  }
 }

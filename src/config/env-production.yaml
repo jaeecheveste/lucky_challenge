@@ -7,6 +7,9 @@ jwt:
 redis:
   url: redis://lucky_redis:6379
   ttl_seconds: 600
+cache:
+  city: 'city:id'
+  user: 'user:username'
 db:
   postgres:
     host: lucky_db

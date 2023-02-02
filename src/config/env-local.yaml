@@ -7,6 +7,9 @@ jwt:
 redis:
   url: redis://localhost:6379
   ttl_seconds: 60
+cache:
+  city: 'city:id'
+  user: 'user:username'
 db:
   postgres:
     host: localhost
